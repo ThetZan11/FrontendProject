@@ -1,0 +1,676 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>project</title>
+    <link rel="stylesheet" href="./boostrap/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"    
+        integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="    
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        body {
+            font: 400 15px Lato, sans-serif;
+            line-height: 1.8;
+            color: #818181;
+        }
+
+        h2 {
+            font-size: 24px;
+            text-transform: uppercase;
+            color: #303030;
+            font-weight: 60;
+            margin-bottom: 30px;
+        }
+
+        h4 {
+            font-size: 19px;
+            line-height: 1.3rem;
+            color: #303030;
+            font-weight: 400;
+            margin-bottom: 30px;
+        }
+
+        .navbar {
+            background-color: #f4511e;
+            z-index: 999;
+            font-size: 12px !important;
+            line-height: 1.4 !important;
+            letter-spacing: 4px;
+            font-family: Montserrat, sans-serif;
+        }
+
+        .navbar .navbar-brand,
+        .navbar li a {
+            color: #fff !important;
+            margin: 3px;
+        }
+
+        .navbar li a:hover,
+        .navbar li a.active {
+            background-color: #fff;
+            color: #f4511e !important;
+            border-radius: 2px;
+            padding: 10px;
+            transition: 1s;
+        }
+
+        #header {
+            background-color: #f4511e;
+            color: #fff;
+            padding: 80px 25px;
+            font-family: Montserrat, sans-serif;
+        }
+
+        #header form {
+            width: 400px;
+            margin: auto;
+        }
+
+        .container-fluid {
+            padding: 60px 50px;
+        }
+
+
+        .logo {
+            color: #f4511e;
+            font-size: 200px;
+            display: block;
+            margin: auto;
+            width: 240px;
+        }
+
+        .logo-small {
+            color: #f4511e;
+            font-size: 50px;
+        }
+
+        #myCarousel {
+            padding: 70px 0px 25px 0px;
+
+        }
+
+        .pre,
+        .next {
+            color: #f4511e;
+            font-size: 40px;
+        }
+
+        #myCarousel .carousel-indicators button {
+            border: 1px solid #f4511e;
+            height: 5px;
+        }
+
+        #myCarousel .carousel-indicators button.active {
+            background-color: #f4511e;
+
+        }
+
+        #myCarousel .carousel-inner {
+            margin-bottom: 40px;
+
+        }
+
+        .panel {
+            border: 1px solid #f4511e;
+            transition: box-shadow 1s;
+            text-align: center;
+        }
+
+        .panel:hover {
+            box-shadow: 5px 0px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .panel .panel-header {
+            color: #fff;
+            background-color: #f4511e;
+            padding: 25px 0px;
+            margin-bottom: 5px;
+        }
+
+        .panel .panel-footer h3 {
+            font-size: 32px;
+        }
+
+        .panel .panel-footer h4 {
+            font-size: 14px;
+            color: #aaa;
+        }
+
+        .panel button {
+            background-color: #f4511e;
+            color: #fff;
+            margin: auto;
+        }
+
+        .panel button:hover {
+            background-color: #fff;
+            color: #f4511e;
+            border: 1px solid #f4511e;
+            transition: 1s;
+        }
+
+        .col-sm-12 .btn {
+            background-color: #f4511e;
+            color: #fff;
+        }
+
+        .col-sm-12 .btn:hover {
+            background-color: #fff;
+            color: #f4511e;
+            border: 1px solid #f4511e;
+            transition: 1s;
+        }
+
+        #footer i {
+            font-size: 30px;
+            color: #f4511e;
+        }
+
+        #footer a {
+            text-decoration: none;
+            color: #f4511e;
+        }
+
+        .navbar-toggler i {
+            font-size: 25px;
+            color: #fff;
+
+        }
+
+        @media screen and (max-width:992px) {
+            .navbar .nav-item a {
+                text-align: center;
+            }
+
+            .navbar .navbar-nav {
+                margin-top: 10px;
+            }
+
+            .btn-lg {
+                width: 100%;
+                margin: 0px 10px 35px 10px;
+            }
+
+            .panel .panel-footer {
+                padding: 0px 10px;
+            }
+
+            .logo {
+                margin-bottom: 30px;
+            }
+
+        }
+
+        @media screen and (max-width:480px) {
+            #header form {
+                width: 350px;
+            }
+
+            .panel {
+                margin: 0px 30px;
+            }
+        }
+
+        @media screen and (max-width:570px) {
+
+            .panel {
+                margin: 0px 30px;
+            }
+        }
+
+
+
+        .slideAnimeObject {
+            visibility: hidden;
+        }
+
+        .slide {
+            animation-name: slide;
+            -webkit-animation-name: slide;
+            animation-duration: 1s;
+            -webkit-animation-duration: 1s;
+            visibility: visible !important;
+
+        }
+
+        @keyframes slide {
+            0% {
+                opacity: 0;
+                transform: translateX(-70%);
+            }
+
+            100% {
+                opacity: 1;
+                transform: translateX(0%);
+            }
+        }
+    </style>
+
+</head>
+
+<body id="myPage">
+    <nav class="navbar navbar-expand-lg sticky-top">
+        <div class="container">
+            <a class="navbar-brand me-auto" href="#">Logo</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
+                aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+                <!-- <span class="navbar-toggler-icon"></span> -->
+                <i class="fas fa-bars"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarText">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#about" id="a">ABOUT</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#services" id="s">SERVICES</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#portfolio" id="po">PORTFOLIO</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#pricing" id="pr">PRICING</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact" id="co">CONTACT</a>
+                    </li>
+                </ul>
+
+            </div>
+        </div>
+    </nav>
+    <div class="text-center" id="header">
+        <h1>Company</h1>
+        <p>We specialize in Blah Blah blah</p>
+        <form>
+            <div class="input-group">
+                <input type="text" class="form-control" placeholder="Email-address">
+                <button class="btn btn-danger">Subscribe</button>
+            </div>
+        </form>
+    </div>
+    <!-- about -->
+    <div id="about" class="container-fluid">
+
+        <div class="row">
+            <div class="col-sm-8">
+                <h2>About Company Page</h2>
+
+                <h4>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+                    et
+
+                    dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+                    aliquip ex ea
+
+                    commodo consequat.</h4>
+
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+                    et dolore
+
+                    magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
+                    ea commodo
+
+                    consequat. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit
+                    anim id
+
+                    est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
+                    aliqua. Ut
+
+                    enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                    consequat.</p>
+
+                <br><button class="btn btn-danger btn-lg">Get in Touch</button>
+            </div>
+            <div class="col-sm-4">
+                <i class="fas fa-signal logo">
+                </i>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid bg-grey">
+        <div class="row">
+            <div class="col-sm-4">
+                <i class="fas fa-signal logo">
+                </i>
+            </div>
+            <div class="col-sm-8">
+                <h2>Our Values</h2>
+
+                <h4><strong>MISSION:</strong> Our mission lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                    do
+
+                    eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+                    exercitation
+
+                    ullamco laboris nisi ut aliquip ex ea commodo consequat.</h4>
+
+                <p><strong>VISION:</strong> Our vision Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                    eiusmod
+
+                    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+                    exercitation ullamco
+
+                    laboris nisi ut aliquip ex ea commodo consequat.
+
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+                    et dolore
+
+                    magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
+                    ea commodo
+
+                    consequat.</p>
+            </div>
+        </div>
+    </div>
+    <!-- about-end -->
+
+    <!-- service -->
+    <div id="services" class="container-fluid text-center">
+        <h2>Service</h2>
+        <h4>What we offer</h4>
+        <br>
+        <div class="row mb-5 slideAnimeobject">
+            <div class="col-sm-4">
+                <i class="fas fa-power-off logo-small"></i>
+                <h4>POWER</h4>
+                <p>Lorem ipsum dolor sit amet
+                    consectetur adipisicing elit.
+                    Labore recusandae eos eligendi dignissimos
+                    Lorem ipsum dolor sit amet
+                    consectetur adipisicing elit.
+                    Labore recusandae eos eligendi dignissimos
+                </p>
+            </div>
+            <div class="col-sm-4">
+                <i class="fas fa-heart logo-small"></i>
+                <h4>LOVE</h4>
+                <p>Lorem ipsum dolor sit amet
+                    consectetur adipisicing elit.
+                    Labore recusandae eos eligendi dignissimos
+                    Lorem ipsum dolor sit amet
+                    consectetur adipisicing elit.
+                    Labore recusandae eos eligendi dignissimos
+                </p>
+            </div>
+            <div class="col-sm-4">
+                <i class="fas fa-lock logo-small"></i>
+                <h4>LOCK</h4>
+                <p>Lorem ipsum dolor sit amet
+                    consectetur adipisicing elit.
+                    Labore recusandae eos eligendi dignissimos
+                </p>
+            </div>
+
+        </div>
+        <div class="row mb-5 slideAnimeobject">
+            <div class="col-sm-4">
+                <i class="fas fa-leaf logo-small"></i>
+                <h4>LEAF</h4>
+                <p>Lorem ipsum dolor sit amet
+                    consectetur adipisicing elit.
+                    Labore recusandae eos eligendi dignissimos
+                    Lorem ipsum dolor sit amet
+                    consectetur adipisicing elit.
+                    Labore recusandae eos eligendi dignissimos
+                </p>
+            </div>
+            <div class="col-sm-4">
+                <i class="fas fa-certificate logo-small"></i>
+                <h4>WOW</h4>
+                <p>Lorem ipsum dolor sit amet
+                    consectetur adipisicing elit.
+                    Labore recusandae eos eligendi dignissimos
+                </p>
+            </div>
+            <div class="col-sm-4">
+                <i class="fas fa-wrench logo-small"></i>
+                <h4>HAMMER</h4>
+                <p>Lorem ipsum dolor sit amet
+                    consectetur adipisicing elit.
+                    Labore recusandae eos eligendi dignissimos
+                </p>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- service-end -->
+
+
+
+    <!-- portfolio -->
+    <div id="portfolio" class="container-fluid bg-grey text-center">
+        <h2>PORTFOLIO</h2>
+        <h4>What we have created</h4>
+        <div class="row slideAnimeobject">
+            <div class="col-sm-4">
+                <div class="mb-3">
+                    <img src="./images/paris.jpg" class="img-thumbnail mb-2" alt="paris">
+                    <p><strong>Paris</strong></p>
+                    <p>We build Paris.</p>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="mb-3">
+                    <img src="./images/newyork.jpg" class="img-thumbnail mb-2" alt="newyork">
+                    <p><strong>New York</strong></p>
+                    <p>We build New york.</p>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="mb-3">
+                    <img src="./images/sanfran.jpg" class="img-thumbnail mb-2" alt="sanfran">
+                    <p><strong>Sanfran</strong></p>
+                    <p>We build Sanfran.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <h2 style="text-align: center;">What our customer say</h2>
+    <div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="active" aria-current="true"
+                aria-label="Slide 1" style="background-color:#f4511e;"></button>
+            <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Slide 2"
+                style="background-color:#f4511e;"></button>
+            <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2" aria-label="Slide 3"
+                style="background-color:#f4511e;"></button>
+        </div>
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <h4 style="text-align: center;"><i>Lorem ipsum dolor sit amet
+                        consectetur adipisicing elit.
+                        Labore recusandae eos eligendi dignissimos </i></h4>
+            </div>
+            <div class="carousel-item">
+                <h4 style="text-align: center;"><i>Lorem ipsum dolor sit amet
+                        consectetur adipisicing elit.
+                        Labore recusandae eos eligendi dignissimos </i></h4>
+            </div>
+            <div class="carousel-item">
+                <h4 style="text-align: center;"><i>Lorem ipsum dolor sit amet
+                        consectetur adipisicing elit.
+                        Labore recusandae eos eligendi dignissimos </i></h4>
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
+            <i class="fas fa-arrow-circle-left pre"></i>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
+            <i class="fas fa-arrow-circle-right next"></i>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+    <!-- portfolio-end -->
+    <!-- pritising -->
+    <h2 id="pricing" class="text-center mt-5">Pricing</h2>
+    <h4 style="text-align: center;">Choose pricing plan that work for you</h4>
+    <div class="row slideAnimeobject">
+        <div class="col-xs-12 col-sm-4">
+            <div class="panel mb-3">
+                <div class="panel-header">
+                    <h1>Basic</h1>
+
+                </div>
+                <div class="panel-body">
+                    <p><strong>20</strong>lorem</p>
+                    <p><strong>15</strong>lorem</p>
+                    <p><strong>5</strong>lorem</p>
+                    <p><strong>2</strong>lorem</p>
+                    <p><strong>Endless</strong>lorem</p>
+                </div>
+                <div class="panel-footer">
+                    <h3>$19</h3>
+                    <h4>per month</h4>
+                    <button class="btn btn-lg mb-3">
+                        Sign-up
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="col-xs-12 col-sm-4">
+            <div class="panel mb-3">
+                <div class="panel-header">
+                    <h1>Pro</h1>
+
+                </div>
+                <div class="panel-body">
+                    <p><strong>20</strong>lorem</p>
+                    <p><strong>15</strong>lorem</p>
+                    <p><strong>5</strong>lorem</p>
+                    <p><strong>2</strong>lorem</p>
+                    <p><strong>Endless</strong>lorem</p>
+                </div>
+                <div class="panel-footer">
+                    <h3>$19</h3>
+                    <h4>per month</h4>
+                    <button class="btn btn-lg mb-3">
+                        Sign-up
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="col-xs-12 col-sm-4">
+            <div class="panel mb-3">
+                <div class="panel-header">
+                    <h1>Premiun</h1>
+
+                </div>
+                <div class="panel-body">
+                    <p><strong>20</strong>lorem</p>
+                    <p><strong>15</strong>lorem</p>
+                    <p><strong>5</strong>lorem</p>
+                    <p><strong>2</strong>lorem</p>
+                    <p><strong>Endless</strong>lorem</p>
+                </div>
+                <div class="panel-footer">
+                    <h3>$19</h3>
+                    <h4>per month</h4>
+                    <button class="btn btn-lg mb-3">
+                        Sign-up
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- pritising end -->
+
+    <!-- CONTACT -->
+    <div id="contact" class="container-fluid">
+        <h2 class="text-center">CONTACT</h2>
+        <div class="row slideAnimeobject">
+            <div class="col-sm-5">
+                <p>Contact Us and we'll get back to you within 24 hours.</p>
+                <p><i class="fas fa-map-marker-alt">&nbsp; Chigago, US</i></p>
+                <p><i class="fas fa-phone">&nbsp; +95-483629743</i></p>
+                <p><i class="fas fa-envelope">&nbsp; thetzan1112002@gmail.com</i></p>
+            </div>
+            <div class="col-sm-7">
+                <div class="row mb-3">
+                    <div class="col-sm-6 mb-2">
+                        <input type="text" class="form-control" placeholder="Enter name">
+                    </div>
+                    <div class="col-sm-6">
+                        <input type="email" class="form-control" placeholder="Enter e-mail address">
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <div class="col-sm-12">
+                        <textarea class="form-control" rows="5" placeholder="comment"></textarea>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12">
+                        <button class="btn">Send</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+    <!-- contact-end -->
+    <img src="./images/map.jpg" alt="map" width="100%">
+    <!-- footer -->
+    <div id="footer" class="container-fluid text-center">
+        <a href="#myPage" title="go to top">
+            <i class="fas fa-angle-up"></i>
+        </a>
+        <p><strong>Developed by</strong><a href="https://www.google.com"> Strong force Technology</a></p>
+    </div>
+
+
+
+    <script src="./boostrap/bootstrap.bundle.min.js"></script>
+    <script src="../boostrap/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(() => {
+            $('.navbar .nav-link').click((e) => {
+                console.log("hhh");
+                $('.navbar .nav-link').removeClass('active');
+                let navLink = $(e.currentTarget);
+                navLink.addClass('active');
+
+                $('.navbar-collapse').removeClass('show');
+            });
+
+            $(window).scroll(() => {
+                let animatedObjects = $('slideAnimeObject') ;
+                console.log(animatedObjects);
+
+                animatedObjects.each(function(){
+                    let currentAnimatedObject = $(this);
+                    console.log(currentAnimatedObject);
+                    let winTopPosition = $(window).scrollTop();
+                    console.log(winTopPosition);
+                    let animatedObjectPosition = currentAnimatedObject.offset().top;
+                    console.log(animatedObjectPosition);
+                    if(winTopPosition > animatedObjectPosition -600){
+                   
+                    currentAnimatedObject.addClass('.slide');
+                }
+                });
+
+                // let animatedObjectPosition = $('#globe').offset().top;
+                // let winTopPosition = $(window).scrollTop();
+                // console.log(winTopPosition);;
+                // console.log(animatedObjectPosition);
+                // if (winTopPosition > animatedObjectPosition - 600) {
+                //     // $('#globe').hide();
+                //     $('#globe').addClass('slide');
+                // }
+            });
+
+
+        });
+    </script>
+</body>
+
+</html>
